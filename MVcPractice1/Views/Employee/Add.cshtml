@@ -1,0 +1,102 @@
+﻿@* @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers;
+
+@model MVcPractice1.Models.EmployeeAddViewModel;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+<form>
+
+        <section>
+            <label asp-for="Employee.Id"></label>
+            <input asp-for ="Employee.Id" />
+        </section>
+        <section>
+            <label asp-for="Employee.FirstName"> </label>
+            <input asp-for="Employee.FirstName"> />
+        </section>
+        <section>
+            <label asp-for="Employee.LastName"> </label>
+            <input asp-for="Employee.LastName" />
+        </section>
+        <section>
+            <label>CityId</label>
+
+        </section>
+        <section>
+            <button type="submit">
+                Submit
+            </button>
+        </section>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ *@
+
+
+@model MVcPractice1.Models.EmployeeAddViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add</title>
+</head>
+<body>
+    <form asp-controller="Employee" asp-action="Add" method="post">
+        <section>
+            <label asp-for="Employee.Id"></label>
+            <input asp-for="Employee.Id" />
+            <span asp-validation-for="Employee.Id" style="color:red;"></span>
+        </section>
+
+        <section>
+            <label asp-for="Employee.Firstname"></label>
+            <input asp-for="Employee.Firstname" />
+            <span asp-validation-for="Employee.Firstname" style="color:red;"></span>
+        </section>
+
+        <section>
+            <label asp-for="Employee.Lastname"></label>
+            <input asp-for="Employee.Lastname" />
+            <span asp-validation-for="Employee.Lastname" style="color:red;"></span>
+        </section>
+
+        <section>
+            <label asp-for="Employee.CityId"></label>
+            <select asp-items="Model.Cities" asp-for="Employee.CityId"> 
+
+            </select>
+
+        </section>
+
+        <section>
+            <button type="submit">Submit</button>
+        </section>
+    </form>
+</body>
+</html>
