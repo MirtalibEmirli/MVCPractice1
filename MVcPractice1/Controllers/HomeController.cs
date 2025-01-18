@@ -242,6 +242,7 @@ namespace MVcPractice1.Controllers
             }
 
         }
+        //queryparam
         public IActionResult Index12(string key, int id = -1)
         {
             List<Employee> employees = new()
